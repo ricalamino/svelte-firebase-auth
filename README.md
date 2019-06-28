@@ -1,6 +1,4 @@
-
----
-# TL;DR
+### TL;DR
 
 To use it, set your credentials in firebase.js file. And that´s it!
 
