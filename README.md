@@ -19,7 +19,7 @@ cd svelte-firebase-auth
 npm install
 ```
 
-...then set up your firebase credentials in firebase.js file
+...then set up your firebase credentials in [firebase.js](https://github.com/ricalamino/svelte-firebase-auth/blob/master/src/firebase.js) file
 
 ...finally run your test environment:
 
