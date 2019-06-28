@@ -1,12 +1,11 @@
-### TL;DR
-
-To use it, set your credentials in firebase.js file. And that´s it!
-
----
-
 # Svelte Firebase Auth App
 
 This is my project to speed up the process of creating an authenticated web app. 
+
+## TL;DR
+
+To use it, set your credentials in firebase.js file. And that´s it!
+
 
 ## Quick start
 
