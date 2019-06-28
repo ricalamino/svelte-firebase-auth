@@ -32,10 +32,10 @@ Navigate to [localhost:5000](http://localhost:5000). You should see your app run
 
 ## Deploying to the web
 
-All the files to deploy your project in web are in `public/` folder.
-
-To create all the files just run...
+To create all static the files just run...
 
 ```bash
 npm run build
 ```
+
+All the files to deploy the web app are in `public/` folder.
