@@ -6,67 +6,36 @@ To use it, set your credentials in firebase.js file. And that´s it!
 
 ---
 
-# svelte app
+# Svelte Firebase Auth App
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+This is my project to speed up the process of creating an authenticated web app. 
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
+## Quick start
 
 Install the dependencies...
 
 ```bash
-cd svelte-app
+cd svelte-firebase-auth
 npm install
 ```
 
-...then start [Rollup](https://rollupjs.org):
+...then set up your firebase credentials in firebase.js file
+
+...finally run your test environment:
 
 ```bash
 npm run dev
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit any component file in `src`, save it, and reload the page to see your changes.
 
 
 ## Deploying to the web
 
-### With [now](https://zeit.co/now)
+All the files to deploy your project in web are in `public/` folder.
 
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-now
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
+To create all the files just run...
 
 ```bash
 npm run build
-surge public
 ```
