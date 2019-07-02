@@ -3,6 +3,9 @@
     import { navigate } from 'svelte-routing';
     import { user } from './../../store.js';
 
+    let email = '';
+    let password = '';
+
     const handleGoogleLogin = () => {
       auth.signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -12,9 +15,9 @@
 
         if(firebaseuser) {
             let {email} = firebaseuser;
-            console.log('first', $user);
+            console.log('Google first', $user);
             user.set({...$user, loggedIn: true, email});
-            console.log('then', $user);
+            console.log('Google then', $user);
             navigate('/dashboard');
         }
         // ...
@@ -31,10 +34,8 @@
     };
 
     // Destructuring to obtain email and password from form via Event
-    const handleLoginForm = ({ 
-        target: { elements: { email, password } } 
-    }) => {
-        auth.signInWithEmailAndPassword(email.value, password.value).then(function(result) {
+    const handleLoginForm = () => {
+        auth.signInWithEmailAndPassword(email, password).then(function(result) {
 
         let firebaseUser = auth.currentUser;
 
@@ -105,7 +106,7 @@ label {
     border-bottom-left-radius: 3px;
 }
 
-input[type=submit] {
+.login {
     float: right;
     margin-right: 20px;
     margin-top: 20px;
@@ -150,21 +151,18 @@ form {
 </style>
 
 <div id="container">
-    <form on:submit|preventDefault={handleLoginForm}>
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-        </div>
-        <div id="lower">
-            <input type="submit" value="Login">
-            <button class="googlelogin" on:click={handleGoogleLogin}>Google</button>
-            
-        </div>
-    </form>
-
+    <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" bind:value={email}>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" bind:value={password}>
+    </div>
+    <div id="lower">
+        <button class="login" on:click={handleLoginForm}>Login</button>
+        <button class="googlelogin" on:click={handleGoogleLogin}>Google</button>
+        
+    </div>
     
 </div>

@@ -16,7 +16,8 @@
 			console.log('logout', $user);
 
 		}, function(error) {
-			// An error happened.
+      // An error happened.
+      console.warn('error on logout', error.message);
 		});
 	}
 
